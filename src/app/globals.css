@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* Tokens de cor (contraste ≥ 4.5:1 conferido nos pares texto/fundo usados). */
+:root {
+  --bg: #f8f5ee;
+  --surface: #ffffff;
+  --fg: #1f1d1a;
+  --muted: #5c574f;
+  --border: #e2dccf;
+  --accent: #b4532a;
+  --accent-fg: #ffffff;
+  --accent-soft: #fbeee6;
+  --success: #276b43;
+  --success-soft: #e8f4ec;
+  --error: #b3261e;
+  --error-soft: #fbeae8;
+  --track: #e9e3d6;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1917;
+    --surface: #262421;
+    --fg: #f3efe7;
+    --muted: #b5aea2;
+    --border: #3a3732;
+    --accent: #e0875a;
+    --accent-fg: #1a1917;
+    --accent-soft: #33251d;
+    --success: #6cc28e;
+    --success-soft: #1d2b22;
+    --error: #f08a80;
+    --error-soft: #2e1f1d;
+    --track: #33302b;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-error: var(--error);
+  --color-error-soft: var(--error-soft);
+  --color-track: var(--track);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@layer base {
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-size: 1rem;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    padding: 0.1em 0.35em;
+    border-radius: 0.3em;
+    background: var(--accent-soft);
+    overflow-wrap: anywhere;
+  }
+}
